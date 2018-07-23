@@ -81,7 +81,8 @@ end
 
 %%% Variable pathways
 if allpathways
-    kmax_per_pulse = 0:kmax;
+    kmax_per_pulse = 1:np;    % MFC 0:kmax -> 1:np
+    kmax = np;                % MFC added
 else
     kmax_per_pulse = [1:ceil(np/2) (floor(np/2)):-1:1];
     kmax_per_pulse(kmax_per_pulse>kmax)=kmax;
